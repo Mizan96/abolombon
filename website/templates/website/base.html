@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'website/css/foundation.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'website/css/app.css' %}">
+	</head>
+	<body>
+
+
+<!-- 
+	***************************************************************Top Most Bar***************************************************************
+ -->
+	
+
+<div class="top-most-bar">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li><p>Same Day Delivery In Dhaka | Free-Store Pick Up</p></li>
+      <li><a href="#">+880-1536......</a></li>
+      <li><a href="logIn" style="padding-right:0; ">Log In</a></li>
+        <li><p style="padding:.7rem .4rem;"> | </p></li>
+        <li><a href="signUp" style="padding-left:0;">Sign Up</a></li>
+      <li><a href="#" style="padding-right:0;">0 Items</a></li>
+        <li><p style="padding:.7rem .4rem;"> - </p></li>
+        <li><p style="padding:.7rem 0; ">&#2547;</p></li>
+        <li><a href="#" style="padding-left:.3rem;">0.00</a></li>
+    </ul>
+</div>
+
+
+<!--
+	***************************************************************Nevigation Bar***************************************************************
+-->
+	<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+<div class="top-bar navigation-section" id="responsive-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">abolombon.com</li>
+      <li class="has-submenu">
+        <a href="">Home</a>
+        <ul class="submenu menu vertical" data-submenu>
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Tutorials</a></li>
+      <li><a href="#">Catgories</a></li>
+      <li><a href="aboutUs">About Us</a></li>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
+<!--  
+***************************************************************Main Section***************************************************************
+-->
+<hr>
+<div class="main-section wrapper">
+	<div class="grid-x">
+		<div class="large-2 left-sidebar">
+            <hr>
+            <h3>Categories</h3>
+            <hr>
+            {% for cat in productCat %}
+			<a href="{{cat.pk}}">{{cat.name}}</a>
+            {% endfor %}
+		</div>
+		<div class="large-8 middle-section">
+            <diV class="feature-products">
+            <hr>
+                <h3>Feature Products</h3>
+            <hr>
+                {% for cat in productCat %}
+                    <div class="image">
+                        <a href="{{cat.pk}}"><img src="{{cat.image.url}}">{{cat.name}}</a>
+                    </div>
+                {% endfor %}
+            </diV>
+            <div class="most-popular-products">
+            <hr>
+                <h3>Most Popular Products</h3>
+            <hr>
+            {% for cat in productCat %}
+                    <div class="image">
+                        <a href="{{cat.pk}}"><img src="{{cat.image.url}}">{{cat.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="upcoming-products">
+            <hr>
+                <h3>Upcoming Products</h3>
+            <hr>
+            {% for cat in productCat %}
+                    <div class="image">
+                        <a href="{{cat.pk}}"><img src="{{cat.image.url}}">{{cat.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+		</div>	
+		<div class="large-2 right-sidebar">
+
+		</div>
+	</div>
+</div>
+	
+<!--
+***************************************************************Footer Section***************************************************************
+-->
+<hr>
+<div class="footer-section wrapper">
+	<h1>This is footer Section</h1>
+</div>
+
+		<script src="{% static 'website/js/vendor/jquery.js' %}"></script>
+		<script src="{% static 'website/js/vendor/what-input.js' %}"></script>
+		<script src="{% static 'website/js/vendor/foundation.min.js' %}"></script>
+		<script src="{% static 'website/js/app.js' %}"></script></div>
+	</body>
+</html>
